@@ -15,8 +15,12 @@ AB_OTA_POSTINSTALL_CONFIG += \
 
 # Boot control HAL
 PRODUCT_PACKAGES += \
-    android.hardware.boot@1.0-impl \
-    android.hardware.boot@1.0-service
+    android.hardware.boot@1.1-mtkimpl.recovery \
+    android.hardware.boot@1.1-mtkimpl
+
+PRODUCT_PACKAGES_DEBUG += \
+    bootctrl
+>>>>>>> 2d595c3 (add bootctrl)
 
 PRODUCT_PACKAGES += \
     bootctrl.mt6768
@@ -31,3 +35,18 @@ PRODUCT_PACKAGES += \
     update_engine \
     update_verifier \
     update_engine_sideload
+
+    
+# Fastbootd
+PRODUCT_PACKAGES += \
+    android.hardware.fastboot@1.0-impl-mock \
+    android.hardware.fastboot@1.0-impl-mock.recovery \
+    fastbootd
+    
+# Health Hal
+PRODUCT_PACKAGES += \
+     android.hardware.health@2.1-impl \
+     android.hardware.health@2.1-service \
+     libhealthd.$(PRODUCT_PLATFORM)
+    
+PRODUCT_COPY_FILES += $(call find-copy-subdir-files,*,$(LOCAL_PATH)/recovery/root,recovery/root) 
