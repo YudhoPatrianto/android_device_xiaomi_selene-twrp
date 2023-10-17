@@ -20,7 +20,6 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES_DEBUG += \
     bootctrl
->>>>>>> 2d595c3 (add bootctrl)
 
 PRODUCT_PACKAGES += \
     bootctrl.mt6768
